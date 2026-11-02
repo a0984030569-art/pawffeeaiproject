@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawffee Cafe - 系統架構與互動體驗專案</title>
+    <!-- Google Fonts 溫潤圓體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F7F3EE;
+            --card-bg: #FFFFFF;
+            --text-main: #4A3E3D;
+            --text-muted: #7A6863;
+            --primary-earth: #8B5A2B;
+            --accent-warm: #C88A58;
+            --border-color: #E2D4C7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Zen Maru Gothic', 'PingFang TC', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: var(--primary-earth);
+            color: white;
+            text-align: center;
+            padding: 3.5rem 1rem;
+            border-bottom: 4px solid var(--accent-warm);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(92, 64, 51, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            color: var(--primary-earth);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        p, ul {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .tech-item {
+            background: var(--bg-color);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .tech-item h3 {
+            color: var(--primary-earth);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .link-btn {
+            display: inline-block;
+            background-color: var(--primary-earth);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .link-btn:hover {
+            background-color: var(--accent-warm);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #3E3230;
+            color: #E2D4C7;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🐾 Pawffee Cafe 專案成果發表</h1>
+        <p>結合智慧工具與前端網頁開發的商管實作</p>
+    </header>
+
+    <div class="container">
+
+        <!-- 專案簡介 -->
+        <div class="card">
+            <h2>📖 專案背景與架構</h2>
+            <p>本專案以寵物友善咖啡廳 <strong>Pawffee Cafe</strong> 為核心，旨在探討如何透過協作工具與前端網頁技術，打造兼具商業價值與溫馨質感的品牌官網。</p>
+            <p>網站完整包含響應式排版、互動式菜單彈窗、Formspree 預約收信系統，以及 OMO 會員專區與智慧客服，完美體現現代行銷企劃與系統落地的結合。</p>
+        </div>
+
+        <!-- 核心亮點 -->
+        <div class="card">
+            <h2>⚙️ 系統三大核心技術亮點</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h3>1. 互動式 Modal 菜單</h3>
+                    <p>支援點擊卡片彈出視窗，提供詳細的食材成分、熱量數據與貼心提醒，優化使用者點餐體驗。</p>
+                </div>
+                <div class="tech-item">
+                    <h3>2. 閉環式預約系統</h3>
+                    <p>串接 Formspree 後端郵件接收服務，確保客戶的線上預約與諮詢能穩定送達管理者信箱。</p>
+                </div>
+                <div class="tech-item">
+                    <h3>3. 智慧客服機器人</h3>
+                    <p>內建輕量化關鍵字對答邏輯，即時回覆顧客關於低消、營業時間與寵物餐點的常見疑問。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 學習反思 -->
+        <div class="card">
+            <h2>💡 技術協作與行銷反思</h2>
+            <ul>
+                <li><strong>行銷與科技的對話：</strong> 透過本次專案，深刻體會到行銷人不只是提出企劃，更能透過工具具體實現產品原型（Prototype）。</li>
+                <li><strong>效率與質感兼具：</strong> 精準掌握視覺色系配置（大地色系）與程式碼結構最佳化，大幅縮短開發週期。</li>
+            </ul>
+            <div style="text-align: center; margin-top: 25px;">
+                <a href="https://a0984030569-art.github.io/myweb/" target="_blank" class="link-btn">🌐 點擊前往 Pawffee Cafe 正式官網</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Pawffee Cafe</p>
+    </footer>
+
+</body>
+</html>
