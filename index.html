@@ -34,6 +34,7 @@
             padding: 40px 20px;
             display: flex;
             justify-content: center;
+            position: relative;
         }
 
         .container {
@@ -205,6 +206,41 @@
             color: var(--bg-color);
         }
 
+        /* Top 浮動返回頂部按鈕樣式 */
+        .top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--card-bg);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .top-btn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .top-btn:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-color);
+            transform: translateY(-3px);
+        }
+
         footer {
             text-align: center;
             margin-top: 50px;
@@ -215,7 +251,7 @@
         }
     </style>
 </head>
-<body>
+<body id="top">
 
     <div class="container">
         <header>
@@ -292,12 +328,16 @@
             </div>
         </section>
 
+        <!-- 浮動 TOP 按鈕 -->
+        <a href="#top" id="topBtn" class="top-btn">TOP</a>
+
         <footer>
             &copy; 2026 Yihua's Portfolio. All Rights Reserved. Designed with Dark Academia & Earth Tone Vibe.
         </footer>
     </div>
 
     <script>
+        // 複製 Prompt 功能
         function copyPrompt(elementId, btn) {
             const text = document.getElementById(elementId).innerText;
             navigator.clipboard.writeText(text).then(() => {
@@ -308,6 +348,16 @@
                 }, 2000);
             });
         }
+
+        // 滾動超過 300px 時顯示 TOP 按鈕
+        const topBtn = document.getElementById("topBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                topBtn.classList.add("show");
+            } else {
+                topBtn.classList.remove("show");
+            }
+        });
     </script>
 </body>
 </html>
