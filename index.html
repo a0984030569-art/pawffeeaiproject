@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yihua's Portfolio | 個人品牌專案作品集</title>
+    <title>Yihua's Brand Hub | 個人專案作品集生態系</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -15,6 +15,7 @@
             --text-muted: #9e9a90;
             --border-color: #332e29;
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            --code-bg: #121111;
         }
 
         * {
@@ -23,16 +24,16 @@
             padding: 0;
             font-family: 'Zen Maru Gothic', 'PingFang TC', sans-serif;
             transition: all 0.3s ease;
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
             min-height: 100vh;
-            padding: 50px 20px;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
         .container {
@@ -43,72 +44,156 @@
         header {
             text-align: center;
             margin-bottom: 50px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
         }
 
         h1 {
             font-family: 'Cinzel', serif;
             color: var(--accent-gold);
-            font-size: 2.4rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
             letter-spacing: 2px;
         }
 
         p.subtitle {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 1.05rem;
             letter-spacing: 1px;
+            margin-bottom: 25px;
         }
 
-        /* 專案卡片網格 */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+        /* 快速導覽列 */
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
-        .project-card {
+        .nav-pill {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            color: var(--accent-gold);
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
         }
 
-        .project-card:hover {
+        .nav-pill:hover {
             border-color: var(--accent-gold);
-            transform: translateY(-5px);
+            background-color: var(--accent-gold);
+            color: var(--bg-color);
+        }
+
+        /* 專案大卡片區塊 */
+        .project-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
         }
 
         .project-icon {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
+            font-size: 2.5rem;
         }
 
         .project-title {
             color: var(--accent-gold);
-            font-size: 1.25rem;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
             font-weight: 700;
         }
 
-        .project-desc {
+        h3 {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        p, li {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        li {
+            margin-bottom: 6px;
             color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            flex-grow: 1;
+        }
+
+        li strong {
+            color: var(--text-main);
+        }
+
+        /* 指令框 */
+        .prompt-container {
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .prompt-box {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px 20px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #e6c584;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--border-color);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-color);
+        }
+
+        /* 前往實體專案按鈕 */
+        .visit-action {
+            margin-top: 25px;
+            text-align: right;
         }
 
         .project-btn {
             display: inline-block;
-            text-align: center;
             background-color: transparent;
             color: var(--accent-gold);
             border: 1px solid var(--accent-gold);
-            padding: 10px 0;
+            padding: 10px 22px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
@@ -117,7 +202,7 @@
 
         .project-btn:hover {
             background-color: var(--accent-gold);
-            color: #0f0e0e;
+            color: var(--bg-color);
         }
 
         footer {
@@ -125,6 +210,8 @@
             margin-top: 50px;
             color: var(--text-muted);
             font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
         }
     </style>
 </head>
@@ -133,45 +220,94 @@
     <div class="container">
         <header>
             <h1>Yihua's Brand Hub</h1>
-            <p class="subtitle">探索我的數位專案與生活風格品牌生態系</p>
+            <p class="subtitle">個人數位專案與生活風格品牌生態系導覽總站</p>
+            <div class="quick-nav">
+                <a href="#pet-diary" class="nav-pill">🐾 毛孩月曆手帳</a>
+                <a href="#pawffee" class="nav-pill">☕ Pawffee 寵物咖啡廳</a>
+                <a href="#midnight-bazaar" class="nav-pill">🍸 AI 微醺餐酒館</a>
+            </div>
         </header>
 
-        <div class="projects-grid">
-            <!-- 專案一：毛孩與月曆手帳 -->
-            <div class="project-card">
+        <!-- 專案一：毛孩與月曆手帳 -->
+        <section id="pet-diary" class="project-section">
+            <div class="project-header">
                 <div class="project-icon">🐾</div>
-                <div>
-                    <h2 class="project-title">毛孩與月曆手帳</h2>
-                    <p class="project-desc">結合行事曆檢視、每日心情追蹤（Mood Tracker）、待辦分類與全域搜尋的溫潤大地色個人手帳系統。</p>
-                </div>
+                <h2 class="project-title">毛孩與月曆手帳</h2>
+            </div>
+            <p><strong>專案理念</strong>：結合日常溫潤大地色系美學與實用功能的個人生活管理系統，專為記錄毛孩日常與自我行程規劃打造。</p>
+            
+            <h3>核心功能架構</h3>
+            <ul>
+                <li><strong>互動式月曆行事曆</strong>：直覺瀏覽每月行程與記事。</li>
+                <li><strong>每日心情追蹤 (Mood Tracker)</strong>：記錄每天的心情狀態與生活點滴。</li>
+                <li><strong>待辦分類與全域搜尋</strong>：高效管理待辦事項，隨時快速檢索歷史紀錄。</li>
+            </ul>
+
+            <div class="visit-action">
                 <a href="https://a0984030569-art.github.io/pet-diary/" target="_blank" class="project-btn">進入專案體驗 ➔</a>
             </div>
+        </section>
 
-            <!-- 專案二：寵物咖啡廳 -->
-            <div class="project-card">
+        <!-- 專案二：寵物咖啡廳 -->
+        <section id="pawffee" class="project-section">
+            <div class="project-header">
                 <div class="project-icon">☕</div>
-                <div>
-                    <h2 class="project-title">Pawffee 寵物咖啡廳</h2>
-                    <p class="project-desc">專為毛小孩與主人打造的溫馨空間介紹與品牌形象展示頁面，傳遞人寵共融的美好生活態度。</p>
-                </div>
+                <h2 class="project-title">Pawffee 寵物咖啡廳</h2>
+            </div>
+            <p><strong>品牌定位</strong>：專為毛小孩與主人打造的溫馨空間介紹與品牌形象展示頁面，傳遞人寵共融的美好生活態度與空間體驗。</p>
+
+            <h3>核心功能架構</h3>
+            <ul>
+                <li><strong>品牌故事與空間氛圍</strong>：展示寵物友善環境、特制餐點與空間美學。</li>
+                <li><strong>友善互動指南</strong>：提供毛主人造訪時的貼心注意事項與預約資訊。</li>
+            </ul>
+
+            <div class="visit-action">
                 <a href="https://a0984030569-art.github.io/myweb/" target="_blank" class="project-btn">進入專案體驗 ➔</a>
             </div>
+        </section>
 
-            <!-- 專案三：微醺餐酒館 -->
-            <div class="project-card">
+        <!-- 專案三：月蝕工坊餐酒館 -->
+        <section id="midnight-bazaar" class="project-section">
+            <div class="project-header">
                 <div class="project-icon">🍸</div>
-                <div>
-                    <h2 class="project-title">月蝕工坊餐酒館</h2>
-                    <p class="project-desc">採用闇黑微醺風（Dark Academia）設計，結合 AI 侍酒師互動推薦與營運管理視角的沉浸式餐酒館專案。</p>
-                </div>
+                <h2 class="project-title">AI 智慧微醺餐酒館</h2>
+            </div>
+            <p><strong>商業與視覺定位</strong>：採用 Dark Academia 闇黑微醺風設計，融合會計成本/營運管理與行銷管理雙軌視角的創新數位專案。</p>
+
+            <h3>技術與商業核心</h3>
+            <ul>
+                <li><strong>營運管理視角</strong>：透過數位化選酒與偏好紀錄優化庫存周轉率。</li>
+                <li><strong>體驗式行銷</strong>：打破傳統單向展示，引導消費者參與 AI 互動選酒。</li>
+            </ul>
+
+            <h3>AI 核心互動指令 (Prompt)</h3>
+            <div class="prompt-container">
+                <button class="copy-btn" onclick="copyPrompt('prompt1', this)">一鍵複製指令</button>
+                <div class="prompt-box" id="prompt1">你現在是一家頂級闇黑微醺風餐酒館的 AI 首席侍酒師。當客人告訴你他的心情、今日狀態或想吃的食物時，請用溫暖、專業且帶有神祕感與浪漫氛圍的語氣，為其推薦一款店內的特色調酒與對應的精緻餐點組合，並說明搭配的風味層次。</div>
+            </div>
+
+            <div class="visit-action">
                 <a href="https://a0984030569-art.github.io/midnight-bazaar/" target="_blank" class="project-btn">進入專案體驗 ➔</a>
             </div>
-        </div>
+        </section>
 
         <footer>
-            &copy; 2026 Yihua's Portfolio. All Rights Reserved.
+            &copy; 2026 Yihua's Portfolio. All Rights Reserved. Designed with Dark Academia & Earth Tone Vibe.
         </footer>
     </div>
 
+    <script>
+        function copyPrompt(elementId, btn) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = "已複製成功！";
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>
