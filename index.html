@@ -10,7 +10,7 @@
             --bg-color: #0f0e0e;
             --card-bg: #171515;
             --accent-gold: #c5a059;
-            --accent-hover: #e6c584;
+            --hub-gold: #f3d085; /* 總站專屬的尊爵金，與專案做出區別 */
             --text-main: #d4d0c7;
             --text-muted: #9e9a90;
             --border-color: #332e29;
@@ -49,12 +49,14 @@
             padding-bottom: 30px;
         }
 
+        /* 總站大標題使用區別色 (hub-gold) */
         h1 {
             font-family: 'Cinzel', serif;
-            color: var(--accent-gold);
+            color: var(--hub-gold);
             font-size: 2.5rem;
             margin-bottom: 10px;
             letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(243, 208, 133, 0.15);
         }
 
         p.subtitle {
@@ -75,7 +77,7 @@
         .nav-pill {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            color: var(--accent-gold);
+            color: var(--hub-gold);
             padding: 8px 18px;
             border-radius: 20px;
             text-decoration: none;
@@ -84,8 +86,8 @@
         }
 
         .nav-pill:hover {
-            border-color: var(--accent-gold);
-            background-color: var(--accent-gold);
+            border-color: var(--hub-gold);
+            background-color: var(--hub-gold);
             color: var(--bg-color);
         }
 
@@ -112,6 +114,7 @@
             font-size: 2.5rem;
         }
 
+        /* 專案標題使用經典金 (accent-gold)，與總站區隔 */
         .project-title {
             color: var(--accent-gold);
             font-size: 1.5rem;
@@ -147,7 +150,7 @@
             color: var(--text-main);
         }
 
-        /* 指令框 */
+        /* 指令框修正：右側預留空間避免按鈕蓋住文字 */
         .prompt-container {
             position: relative;
             margin-top: 10px;
@@ -157,7 +160,7 @@
             background-color: var(--code-bg);
             border: 1px solid var(--border-color);
             border-radius: 10px;
-            padding: 15px 20px;
+            padding: 15px 120px 15px 20px; /* 關鍵：右側留出 120px 給按鈕 */
             font-family: monospace;
             font-size: 0.85rem;
             color: #e6c584;
@@ -167,15 +170,16 @@
 
         .copy-btn {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 12px;
+            right: 12px;
             background-color: var(--border-color);
-            color: var(--accent-gold);
+            color: var(--hub-gold);
             border: 1px solid var(--accent-gold);
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 6px;
             font-size: 0.75rem;
             cursor: pointer;
+            font-weight: bold;
         }
 
         .copy-btn:hover {
@@ -281,7 +285,7 @@
             <h3>AI 核心互動指令 (Prompt)</h3>
             <div class="prompt-container">
                 <button class="copy-btn" onclick="copyPrompt('prompt1', this)">一鍵複製指令</button>
-                <div class="prompt-box" id="prompt1">你現在是 Pawffee 寵物友善咖啡廳的品牌智能嚮導。當客人詢問關於帶著毛小孩造訪的注意事項、推薦餐點或空間vælgent 時，請用親切、溫馨且充滿熱情的人寵共融語氣進行介紹與推薦。</div>
+                <div class="prompt-box" id="prompt1">你現在是 Pawffee 寵物友善咖啡廳的品牌智能嚮導。當客人詢問關於帶著毛小孩造訪的注意事項、推薦餐點或空間氛圍時，請用親切、溫馨且充滿熱情的人寵共融語氣進行介紹與推薦。</div>
             </div>
 
             <div class="visit-action">
@@ -289,11 +293,11 @@
             </div>
         </section>
 
-        <!-- 專案二：深夜奇幻市集餐酒館 -->
+        <!-- 專案二：AI 智慧深夜奇幻市集餐酒館 -->
         <section id="midnight-bazaar" class="project-section">
             <div class="project-header">
                 <div class="project-icon">🍸</div>
-                <h2 class="project-title">深夜奇幻市集餐酒館</h2>
+                <h2 class="project-title">AI 智慧深夜奇幻市集餐酒館</h2>
             </div>
             <p><strong>商業與視覺定位</strong>：採用神祕夢幻的深夜奇幻市集（Midnight Bazaar）風格設計，融合會計成本/營運管理與行銷管理雙軌視角的創新數位專案。</p>
 
@@ -306,7 +310,7 @@
             <h3>AI 核心互動指令 (Prompt)</h3>
             <div class="prompt-container">
                 <button class="copy-btn" onclick="copyPrompt('prompt2', this)">一鍵複製指令</button>
-                <div class="prompt-box" id="prompt2">你現在是一家頂級神祕夢幻風深夜奇幻市集餐酒館的侍酒師。當客人告訴你他的心情、今日狀態或想吃的食物時，請用溫暖、專業且帶有神祕感與浪漫氛圍的語氣，為其推薦一款店內的特色調酒與對應的精緻餐點組合，並說明搭配的風味層次。</div>
+                <div class="prompt-box" id="prompt2">你現在是一家頂級神祕夢幻風深夜奇幻市集餐酒館的 AI 首席侍酒師。當客人告訴你他的心情、今日狀態或想吃的食物時，請用溫暖、專業且帶有神祕感與浪漫氛圍的語氣，為其推薦一款店內的特色調酒與對應的精緻餐點組合，並說明搭配的風味層次。</div>
             </div>
 
             <div class="visit-action">
