@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pawffee Cafe - 系統架構與互動體驗專案</title>
-    <!-- Google Fonts 溫潤圓體 -->
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Personal Brand Portfolio | 個人專案作品集</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #FFF5F7;
-            --card-bg: #FFFFFF;
-            --text-main: #5C4033;
-            --text-muted: #8B6B61;
-            --primary-pink: #E08298;
-            --accent-pink: #F2A2B5;
-            --border-color: #F3D1DA;
+            --bg-color: #0f0e0e;
+            --card-bg: #171515;
+            --accent-gold: #c5a059;
+            --accent-hover: #e6c584;
+            --text-main: #d4d0c7;
+            --text-muted: #9e9a90;
+            --border-color: #332e29;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
         }
 
         * {
@@ -22,167 +22,159 @@
             margin: 0;
             padding: 0;
             font-family: 'Zen Maru Gothic', 'PingFang TC', sans-serif;
+            transition: all 0.3s ease;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.7;
-        }
-
-        header {
-            background-color: var(--primary-pink);
-            color: white;
-            text-align: center;
-            padding: 3.5rem 1rem;
-            border-bottom: 4px solid var(--accent-pink);
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.95;
+            min-height: 100vh;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .container {
             max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
+            width: 100%;
         }
 
-        .card {
-            background: var(--card-bg);
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* 專案卡片網格 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(224, 130, 152, 0.08);
-            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        h2 {
-            color: var(--primary-pink);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
+        .project-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
         }
 
-        p, ul {
-            color: var(--text-muted);
+        .project-icon {
+            font-size: 2.2rem;
             margin-bottom: 15px;
-            font-size: 1rem;
         }
 
-        ul {
-            padding-left: 20px;
+        .project-title {
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
-        li {
-            margin-bottom: 8px;
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-grow: 1;
         }
 
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .tech-item {
-            background: var(--bg-color);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .tech-item h3 {
-            color: var(--primary-pink);
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-
-        .link-btn {
+        .project-btn {
             display: inline-block;
-            background-color: var(--primary-pink);
-            color: white;
-            padding: 10px 24px;
-            border-radius: 25px;
+            text-align: center;
+            background-color: transparent;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 10px 0;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 10px;
-            transition: background 0.3s;
+            font-size: 0.9rem;
         }
 
-        .link-btn:hover {
-            background-color: var(--accent-pink);
+        .project-btn:hover {
+            background-color: var(--accent-gold);
+            color: #0f0e0e;
         }
 
         footer {
             text-align: center;
-            padding: 25px;
-            background-color: #5C4033;
-            color: #F3D1DA;
-            font-size: 0.9rem;
             margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>🐾 Pawffee Cafe 專案成果發表</h1>
-        <p>結合智慧工具與前端網頁開發的商管實作</p>
-    </header>
-
     <div class="container">
+        <header>
+            <h1>Personal Brand Hub</h1>
+            <p class="subtitle">探索我的數位專案與生活風格品牌生態系</p>
+        </header>
 
-        <!-- 專案簡介 -->
-        <div class="card">
-            <h2>📖 專案背景與架構</h2>
-            <p>本專案以寵物友善咖啡廳 <strong>Pawffee Cafe</strong> 為核心，旨在探討如何透過協作工具與前端網頁技術，打造兼具商業價值與溫馨質感的品牌官網。</p>
-            <p>網站完整包含響應式排版、互動式菜單彈窗、Formspree 預約收信系統，以及 OMO 會員專區與智慧客服，完美體現現代行銷企劃與系統落地的結合。</p>
-        </div>
+        <div class="projects-grid">
+            <!-- 專案一：毛孩與月曆手帳 -->
+            <div class="project-card">
+                <div class="project-icon">🐾</div>
+                <div>
+                    <h2 class="project-title">毛孩與月曆手帳</h2>
+                    <p class="project-desc">結合行事曆檢視、每日心情追蹤（Mood Tracker）、待辦分類與全域搜尋的溫潤大地色個人手帳系統。</p>
+                </div>
+                <!-- 之後把 href 換成妳手帳的 GitHub Pages 網址 -->
+                <a href="https://妳的帳號.github.io/手帳專案網址/" target="_blank" class="project-btn">進入專案體驗 ➔</a>
+            </div>
 
-        <!-- 核心亮點 -->
-        <div class="card">
-            <h2>⚙️ 系統三大核心技術亮點</h2>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <h3>1. 互動式 Modal 菜單</h3>
-                    <p>支援點擊卡片彈出視窗，提供詳細的食材成分、熱量數據與貼心提醒，優化使用者點餐體驗。</p>
+            <!-- 專案二：寵物咖啡廳 -->
+            <div class="project-card">
+                <div class="project-icon">☕</div>
+                <div>
+                    <h2 class="project-title">Pawffee 寵物咖啡廳</h2>
+                    <p class="project-desc">專為毛小孩與主人打造的溫馨空間介紹與品牌形象展示頁面，傳遞人寵共融的美好生活態度。</p>
                 </div>
-                <div class="tech-item">
-                    <h3>2. 閉環式預約系統</h3>
-                    <p>串接 Formspree 後端郵件接收服務，確保客戶的線上預約與諮詢能穩定送達管理者信箱。</p>
+                <!-- 妳剛提供的寵物咖啡廳介紹網址 -->
+                <a href="https://a0984030569-art.github.io/pawffeeaiproject/" target="_blank" class="project-btn">進入專案體驗 ➔</a>
+            </div>
+
+            <!-- 專案三：AI 微醺餐酒館 -->
+            <div class="project-card">
+                <div class="project-icon">🍸</div>
+                <div>
+                    <h2 class="project-title">AI 智慧微醺餐酒館</h2>
+                    <p class="project-desc">採用闇黑微醺風（Dark Academia）設計，結合 AI 侍酒師互動推薦與營運管理視角的沉浸式餐酒館專案。</p>
                 </div>
-                <div class="tech-item">
-                    <h3>3. 智慧客服機器人</h3>
-                    <p>內建輕量化關鍵字對答邏輯，即時回覆顧客關於低消、營業時間與寵物餐點的常見疑問。</p>
-                </div>
+                <!-- 之後等餐酒館做好再填入網址 -->
+                <a href="#" target="_blank" class="project-btn">籌備中 / 敬請期待 ➔</a>
             </div>
         </div>
 
-        <!-- 學習反思 -->
-        <div class="card">
-            <h2>💡 技術協作與行銷反思</h2>
-            <ul>
-                <li><strong>行銷與科技的對話：</strong> 透過本次專案，深刻體會到行銷人不只是提出企劃，更能透過工具具體實現產品原型（Prototype）。</li>
-                <li><strong>效率與質感兼具：</strong> 精準掌握視覺色系配置（粉嫩色系）與程式碼結構最佳化，大幅縮短開發週期。</li>
-            </ul>
-            <div style="text-align: center; margin-top: 25px;">
-                <a href="https://a0984030569-art.github.io/myweb/" target="_blank" class="link-btn">🌐 點擊前往 Pawffee Cafe 正式官網</a>
-            </div>
-        </div>
-
+        <footer>
+            &copy; 2026 Personal Brand Portfolio. All Rights Reserved.
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Pawffee Cafe</p>
-    </footer>
 
 </body>
 </html>
