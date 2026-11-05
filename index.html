@@ -7,15 +7,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0f0e0e;
-            --card-bg: #171515;
+            /* 總站專屬：莫蘭迪煙灰藍底色，與各專案徹底區隔不撞色 */
+            --bg-color: #11161d;
+            --card-bg: #1a212b;
             --accent-gold: #c5a059;
-            --hub-gold: #f3d085; /* 總站專屬的尊爵金，與專案做出區別 */
+            --hub-gold: #f3d085; /* 總站專屬的尊爵金 */
             --text-main: #d4d0c7;
             --text-muted: #9e9a90;
-            --border-color: #332e29;
+            --border-color: #2a3442;
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-            --code-bg: #121111;
+            --code-bg: #12171f;
         }
 
         * {
@@ -265,10 +266,11 @@
                 <a href="#pawffee" class="nav-pill">☕ Pawffee 寵物咖啡廳</a>
                 <a href="#midnight-bazaar" class="nav-pill">🍸 AI 智慧微醺餐酒館</a>
                 <a href="#daily-flow" class="nav-pill">🌿 Daily Flow 生活財務手帳</a>
+                <a href="#paw-pet-spa" class="nav-pill">🐾 Paw Pet Spa 精緻寵物美容</a>
             </div>
         </header>
 
-        <!-- 專案一：Pawffee 寵物咖啡廳 -->
+        <!-- 方案一：Pawffee 寵物咖啡廳 -->
         <section id="pawffee" class="project-section">
             <div class="project-header">
                 <div class="project-icon">☕</div>
@@ -293,18 +295,18 @@
             </div>
         </section>
 
-        <!-- 專案二：AI 智慧深夜奇幻市集餐酒館 -->
+        <!-- 方案二：月蝕工坊（Eclipse Atelier）餐酒館 -->
         <section id="midnight-bazaar" class="project-section">
             <div class="project-header">
                 <div class="project-icon">🍸</div>
-                <h2 class="project-title">AI 智慧深夜奇幻市集餐酒館</h2>
+                <h2 class="project-title">Eclipse Atelier餐酒館</h2>
             </div>
-            <p><strong>商業與視覺定位</strong>：採用神祕夢幻的深夜奇幻市集（Midnight Bazaar）風格設計，融合會計成本/營運管理與行銷管理雙軌視角的創新數位專案。</p>
+            <p><strong>商業與視覺定位</strong>：採用神祕夢幻的深夜奇幻市集（Midnight Bazaar）與 Dark Academia 黑金古典美學風格設計，融合會計成本/營運管理與行銷管理雙軌視角的創新數位專案。</p>
 
             <h3>技術與商業核心</h3>
             <ul>
                 <li><strong>營運管理視角</strong>：透過數位化選酒與偏好紀錄優化庫存周轉率。</li>
-                <li><strong>體驗式行銷</strong>：打破傳統單向展示，引導消費者參與 AI 互動選酒。</li>
+                <li><strong>體驗式行銷</strong>：打破傳統單向展示，引導消費者參與 AI 互動選酒，並具備穩定可靠的 Formspree 信箋預約系統。</li>
             </ul>
 
             <h3>AI 核心互動指令 (Prompt)</h3>
@@ -318,7 +320,7 @@
             </div>
         </section>
 
-        <!-- 專案三：Daily Flow 個人質感生活與財務手帳 -->
+        <!-- 方案三：Daily Flow 個人生活與財務手帳 -->
         <section id="daily-flow" class="project-section">
             <div class="project-header">
                 <div class="project-icon">🌿</div>
@@ -343,11 +345,36 @@
             </div>
         </section>
 
+        <!-- 方案四：Paw Pet Spa 寵物美容 -->
+        <section id="paw-pet-spa" class="project-section">
+            <div class="project-header">
+                <div class="project-icon">🐾</div>
+                <h2 class="project-title">Paw Pet Spa 精緻寵物美容預約官網</h2>
+            </div>
+            <p><strong>品牌定位</strong>：採用溫馨暖調實景風（奶杏燕麥色 `#fcf9f5`）與圓體字體的精緻三頁式架構官網（首頁、關於我們、預約諮詢）。堅持全程不關籠、設有自由遊戲等待區，並結合絕對穩定的 Formspree 預約信箱系統。</p>
+
+            <h3>核心功能架構</h3>
+            <ul>
+                <li><strong>三頁式質感美學</strong>：包含環境與萌寵寫真輪播、透明化價格表與四大毛孩（博美、貴賓、柯基、比熊）美容前後對比展示。</li>
+                <li><strong>專業安心預約</strong>：嚴格標註全預約制與「恕不接待會咬人的狗狗」安全條款，表單資料可百分之百直達管理者信箱。</li>
+            </ul>
+
+            <h3>AI 核心互動指令 (Prompt)</h3>
+            <div class="prompt-container">
+                <button class="copy-btn" onclick="copyPrompt('prompt4', this)">一鍵複製指令</button>
+                <div class="prompt-box" id="prompt4">你現在是 Paw Pet Spa 精緻寵物美容的專業客服顧問。當毛爸毛媽詢問關於基礎洗護、頂級大美容的服務內容、不關籠自由遊戲空間或是預約注意事項時，請用充滿愛心、溫柔且專業的語氣為其解答。</div>
+            </div>
+
+            <div class="visit-action">
+                <a href="https://a0984030569-art.github.io/PawPet/" target="_blank" class="project-btn">進入專案體驗 ➔</a>
+            </div>
+        </section>
+
         <!-- 浮動 TOP 按鈕 -->
         <a href="#top" id="topBtn" class="top-btn">TOP</a>
 
         <footer>
-            &copy; 2026 Yihua's Portfolio. All Rights Reserved. Designed with Dark Academia & Earth Tone Vibe.
+            &copy; 2026 Yihua's Portfolio. All Rights Reserved. Designed with Ecosystem Hub Vibe.
         </footer>
     </div>
 
